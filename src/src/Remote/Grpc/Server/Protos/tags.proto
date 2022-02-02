@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option csharp_namespace = "api.Grpc";
+
+
+//GetByIds(request) return (response);
+service GrpcCourses {
+  rpc GetByIds (GetByIdsRequest) returns (GetByIdsResponse);
+}
+message GetByIdsRequest {
+  repeated int32 Ids = 1;
+}
+message GetByIdsResponse {
+  repeated Tags tags = 1;
+}
+
+//Models
+message Tags {
+  int32 Id = 1;
+  string Name = 2;
+  string Description = 3;
+  int32 Popularity = 0;
+}
+
+
+////////// Another Service ////////////

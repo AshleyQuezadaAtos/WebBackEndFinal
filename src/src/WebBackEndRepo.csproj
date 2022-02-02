@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+		<PackageReference Include="Google.Protobuf" Version="3.19.3" />
+		<PackageReference Include="Grpc.AspNetCore" Version="2.42.0" />
+		<PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="6.0.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.2.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.1" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.1">
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.1" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.1">
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Protobuf Include="Remote\Grpc\Server\Protos\courses.proto" GrpcServices="Server">
+	  </Protobuf>
+		<Protobuf Include="Remote\Grpc\Server\Protos\topics.proto" GrpcServices="Server">
+		</Protobuf>
+	</ItemGroup>
+</Project>

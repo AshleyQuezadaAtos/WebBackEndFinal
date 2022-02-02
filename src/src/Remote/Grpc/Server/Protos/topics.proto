@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option csharp_namespace = "api.Grpc";
+
+
+//GetByIds(request) return (response);
+service GrpcTopics {
+   rpc GetByIdsTopicUser (GetByIdsTopicUserRequest) returns (GetByIdsTopicUserResponse);
+}
+//GetByIds(request) return (response);
+//TOPICS DETAILS
+message GetByIdsTopicUserRequest {
+  int32 Id = 1;
+}
+message GetByIdsTopicUserResponse {
+  TopicsDetails topicsDetails = 1;
+}
+
+//Models
+message TopicsDetails {
+  int32 Id = 1;
+  string Title = 2;
+  string Description = 3;
+  int32 Number = 4;
+  double Rating = 5;
+  //boolean Deleted = 0;
+}
+
+
+////////// Another Service ////////////

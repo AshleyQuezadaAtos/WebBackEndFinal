@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+option csharp_namespace = "api.Grpc";
+
+
+//GetByIds(request) return (response);
+//COURSE
+service GrpcCourses {
+  rpc GetByIds (GetByIdsRequest) returns (GetByIdsResponse);
+  rpc GetByIdsCourseUser (GetByIdsCourseUserRequest) returns (GetByIdsCourseUserResponse);
+}
+message GetByIdsRequest {
+  repeated int32 Ids = 1;
+}
+message GetByIdsResponse {
+  repeated Course courses = 1;
+}
+
+
+
+//GetByIds(request) return (response);
+//COURSE DETAILS
+message GetByIdsCourseUserRequest {
+  int32 Id = 1;
+}
+message GetByIdsCourseUserResponse {
+  CourseDetails coursesDetails = 1;
+}
+
+
+
+////////// Another Service ////////////
+
+message Course {
+  int32 Id = 1;
+  string Name = 2;
+  string Description = 3;
+  double Duration = 4;
+  double Rate = 5;
+}  
+
+message CourseDetails{
+
+  int32 Id = 1;
+  string Name = 2;
+  string Description = 3;
+  double Duration = 4;
+  optional double Rate = 5;
+  repeated Tag Tags = 6;
+  repeated Section Sections = 7;
+  //enum CourseType {}
+}
+
+message Tag {
+  int32 Id = 1;
+  string Name = 2;
+  string Description = 3;
+  int32 Popularity = 4;
+}
+
+message Section {
+  int32 Id = 1;
+  string Title = 2;
+  string Description = 3;
+  int32 Number = 4;
+  double Rating = 5;
+  //boolean Deleted = 0;
+}
