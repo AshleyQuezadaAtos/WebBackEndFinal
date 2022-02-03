@@ -38,8 +38,8 @@ namespace WebCourseRepo
             //Server=localhost;Database=db_upgrade;User Id=sa;Password=******;
             Console.WriteLine(Configuration.GetConnectionString("CourseConnection"));
             services.AddDbContext<EntityContext>(
-                options => options.UseSqlServer(Configuration.GetConnectionString("CourseConnection")));
-
+                options => options.UseInMemoryDatabase("WebBackEndAPI"));
+          
 
             //Repositories
             //----COURSES------//
@@ -91,6 +91,9 @@ namespace WebCourseRepo
 
                 endpoints.MapControllers();
             });
+
+            //Aquì se configura la base de datos (Iniciando migraciòn)
+            MigrationRunner.Run(app);
         }
     }
 }
