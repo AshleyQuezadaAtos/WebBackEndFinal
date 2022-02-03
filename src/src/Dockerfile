@@ -6,7 +6,7 @@
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
 EXPOSE 80
-EXPOSE 443
+EXPOSE 667
 EXPOSE 5001
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
@@ -16,12 +16,12 @@ RUN dotnet restore "WebBackEndRepo.csproj"
 COPY . .
 RUN dotnet build "WebBackEndRepo.csproj" -c Release -o /app/build
 #Setup db
-USER root
-ENV PATH $PATH:/root/.dotnet/tools
-RUN dotnet tool install --global dotnet-ef
-RUN dotnet add package Microsoft.EntityFrameworkCore.Design -v 6.0.1
-CMD ["dotnet-ef", "migrations", "add", "Setup_database"]
-ENTRYPOINT ["dotnet-ef", "database", "update"]
+#USER root
+#ENV PATH $PATH:/root/.dotnet/tools
+#RUN dotnet tool install --global dotnet-ef
+#RUN dotnet add package Microsoft.EntityFrameworkCore.Design -v 6.0.1
+#CMD ["dotnet-ef", "migrations", "add", "Setup_database"]
+#ENTRYPOINT ["dotnet-ef", "database", "update"]
 FROM build AS publish
 RUN dotnet publish "WebBackEndRepo.csproj" -c Release -o /app/publish
 

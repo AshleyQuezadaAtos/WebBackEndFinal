@@ -1,7 +1,4 @@
-src/src/obj
-src/src/bin
-
+bin/
+obj/
 .idea/
-
 out/
-**/out/
