@@ -7,6 +7,7 @@ namespace WebCourseRepo.Models
 {
     public class Topic : Entity
     {
+
         [Required]
         public string Title { get; set; }
 

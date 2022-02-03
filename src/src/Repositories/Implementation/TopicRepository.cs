@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using WebCourseRepo.Configurations;
+using WebBackEndRepo.Configurations;
 using WebCourseRepo.Models;
 
 namespace WebCourseRepo.Repositories.Implementation

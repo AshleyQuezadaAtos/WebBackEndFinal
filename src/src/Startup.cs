@@ -1,26 +1,15 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using Newtonsoft.Json.Serialization;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using api.Grpc;
+using WebBackEndRepo.Configurations;
 using WebBackEndRepo.Remote.Grpc.Server.Services;
-using WebCourseRepo.Configurations;
+using WebCourseRepo;
 using WebCourseRepo.Repositories;
 using WebCourseRepo.Repositories.Implementation;
 using WebCourseRepo.Services;
 using WebCourseRepo.Services.Implementation;
 using WebStatusRepo.Services.Implementation;
 
-namespace WebCourseRepo
+namespace WebBackEndRepo
 {
     public class Startup
     {

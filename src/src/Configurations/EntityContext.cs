@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WebCourseRepo.Models;
 
-namespace WebCourseRepo.Configurations
+namespace WebBackEndRepo.Configurations
 {
     public class EntityContext : DbContext
     {
