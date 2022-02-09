@@ -9,7 +9,7 @@ namespace WebCourseRepo.Services
     {
         Task<List<CourseDto>> FindAll();
         Task<CourseDto?> FindById(int id);
-        
+        Task<CourseDetailsDto?> FindByIdDetails(int id);
         Task<List<CourseDto>> FindByIds(List<int> ids);
         Task Insert(CourseDto course);
         Task Delete(int id);

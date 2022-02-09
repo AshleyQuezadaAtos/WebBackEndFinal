@@ -19,7 +19,6 @@ namespace WebCourseRepo.Models
 
         public bool Deleted { get; set; }
 
-
         //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}",  ApplyFormatInEditMode = true)]
         public DateTime CreatedDate { get; set; }
         public int? CreatedBy { get; set; }
@@ -29,5 +28,9 @@ namespace WebCourseRepo.Models
         [Required] 
         public Status Status { get; set; }
 
-    }
+        public Language Language { get; set; }
+
+        public IList<Tag> Tags { get; set; }
+
+}
 }

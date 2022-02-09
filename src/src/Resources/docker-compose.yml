@@ -19,13 +19,13 @@ services:
       retries: 5
       start_period: 30s
 
-  courseservices:
-    image: ashleyatos/course-services:v1
-    container_name: course-service
-    ports:
-      - 5002:5001
-    depends_on:
-      - sqlserver
+  #courseservices:
+    #image: ashleyatos/course-services:v1
+    #container_name: course-service
+    #ports:
+    #  - 5002:5001
+    #depends_on:
+    #  - sqlserver
     
     
    

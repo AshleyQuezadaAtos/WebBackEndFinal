@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebBackEndRepo.Configurations;
 
@@ -11,9 +12,10 @@ using WebBackEndRepo.Configurations;
 namespace WebBackEndRepo.Migrations
 {
     [DbContext(typeof(EntityContext))]
-    partial class EntityContextModelSnapshot : ModelSnapshot
+    [Migration("20220208211946_TagsCollection")]
+    partial class TagsCollection
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,21 +23,6 @@ namespace WebBackEndRepo.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("CourseTag", b =>
-                {
-                    b.Property<int>("CoursesId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TagsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CoursesId", "TagsId");
-
-                    b.HasIndex("TagsId");
-
-                    b.ToTable("CourseTag");
-                });
 
             modelBuilder.Entity("WebCourseRepo.Models.Course", b =>
                 {
@@ -213,6 +200,9 @@ namespace WebBackEndRepo.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int?>("CourseId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
@@ -231,6 +221,8 @@ namespace WebBackEndRepo.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CourseId");
 
                     b.HasIndex("Name")
                         .IsUnique();
@@ -359,21 +351,6 @@ namespace WebBackEndRepo.Migrations
                         });
                 });
 
-            modelBuilder.Entity("CourseTag", b =>
-                {
-                    b.HasOne("WebCourseRepo.Models.Course", null)
-                        .WithMany()
-                        .HasForeignKey("CoursesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WebCourseRepo.Models.Tag", null)
-                        .WithMany()
-                        .HasForeignKey("TagsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("WebCourseRepo.Models.Course", b =>
                 {
                     b.HasOne("WebCourseRepo.Models.Language", "Language")
@@ -412,6 +389,10 @@ namespace WebBackEndRepo.Migrations
 
             modelBuilder.Entity("WebCourseRepo.Models.Tag", b =>
                 {
+                    b.HasOne("WebCourseRepo.Models.Course", null)
+                        .WithMany("Tags")
+                        .HasForeignKey("CourseId");
+
                     b.HasOne("WebCourseRepo.Models.Status", "Status")
                         .WithMany()
                         .HasForeignKey("StatusId");
@@ -442,6 +423,11 @@ namespace WebBackEndRepo.Migrations
                     b.Navigation("Status");
 
                     b.Navigation("Type");
+                });
+
+            modelBuilder.Entity("WebCourseRepo.Models.Course", b =>
+                {
+                    b.Navigation("Tags");
                 });
 #pragma warning restore 612, 618
         }

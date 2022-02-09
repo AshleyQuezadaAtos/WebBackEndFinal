@@ -37,12 +37,12 @@ public class GrpcCoursesService : GrpcCourses.GrpcCoursesBase
 
     //Retorna los cursos de un usuario
     // ---/user/{userId}/course/{courseId}
-    public override async Task<GetByIdsCourseUserResponse> GetByIdsCourseUser(GetByIdsCourseUserRequest request, ServerCallContext context)
+    public override async Task<GetByIdCourseUserResponse> GetByIdCourseUser(GetByIdCourseUserRequest request, ServerCallContext context)
     {
-        GetByIdsCourseUserResponse response = new GetByIdsCourseUserResponse();
-        CourseDto dtos = await _service.FindById(request.Id);
+        GetByIdCourseUserResponse response = new GetByIdCourseUserResponse();
+        CourseDetailsDto dtos = await _service.FindByIdDetails(request.Id);
         
-            response.CoursesDetails=_mapper.Map<CourseDto, CourseDetails>(dtos);
+            response.CoursesDetails=_mapper.Map<CourseDetailsDto, CourseDetails>(dtos);
         
         return response;
     }

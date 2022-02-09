@@ -20,6 +20,9 @@ namespace WebCourseRepo.Models
         public int Popularity { get; set; }
 
         public Status? Status { get; set; }
-     
+
+        public int? Priority { get; set; }
+
+        public IList<Course> Courses { get; set; }
     }
 }

@@ -9527,19 +9527,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\a842655\\.nuget\\packages\\": {}
+    "C:\\Users\\a843683\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\a842655\\RiderProjects\\UPGRADE\\backend\\src\\CoursesService\\WebBackEndFinal\\test\\TestingBackEndRepo\\TestingBackEndRepo.csproj",
+      "projectUniqueName": "C:\\Users\\a843683\\Source\\Repos\\GitAshley\\WebBackEndFinal\\test\\TestingBackEndRepo\\TestingBackEndRepo.csproj",
       "projectName": "TestingBackEndRepo",
-      "projectPath": "C:\\Users\\a842655\\RiderProjects\\UPGRADE\\backend\\src\\CoursesService\\WebBackEndFinal\\test\\TestingBackEndRepo\\TestingBackEndRepo.csproj",
-      "packagesPath": "C:\\Users\\a842655\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\a842655\\RiderProjects\\UPGRADE\\backend\\src\\CoursesService\\WebBackEndFinal\\test\\TestingBackEndRepo\\obj\\",
+      "projectPath": "C:\\Users\\a843683\\Source\\Repos\\GitAshley\\WebBackEndFinal\\test\\TestingBackEndRepo\\TestingBackEndRepo.csproj",
+      "packagesPath": "C:\\Users\\a843683\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\a843683\\Source\\Repos\\GitAshley\\WebBackEndFinal\\test\\TestingBackEndRepo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\a842655\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\a843683\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9553,8 +9553,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\a842655\\RiderProjects\\UPGRADE\\backend\\src\\CoursesService\\WebBackEndFinal\\src\\src\\WebBackEndRepo.csproj": {
-              "projectPath": "C:\\Users\\a842655\\RiderProjects\\UPGRADE\\backend\\src\\CoursesService\\WebBackEndFinal\\src\\src\\WebBackEndRepo.csproj"
+            "C:\\Users\\a843683\\Source\\Repos\\GitAshley\\WebBackEndFinal\\src\\src\\WebBackEndRepo.csproj": {
+              "projectPath": "C:\\Users\\a843683\\Source\\Repos\\GitAshley\\WebBackEndFinal\\src\\src\\WebBackEndRepo.csproj"
             }
           }
         }

@@ -25,10 +25,11 @@ namespace WebBackEndRepo
         {
             //Database configuration
             //Server=localhost;Database=db_upgrade;User Id=sa;Password=******;
-            Console.WriteLine(Configuration.GetConnectionString("CourseConnection"));
+            //Console.WriteLine(Configuration.GetConnectionString("CourseConnection"));
             services.AddDbContext<EntityContext>(
-                options => options.UseInMemoryDatabase("WebBackEndAPI"));
-          
+                options => options.UseSqlServer(Configuration.GetConnectionString("CourseConnection")));
+            //options => options.UseInMemoryDatabase("WebBackEndAPI"));
+
 
             //Repositories
             //----COURSES------//

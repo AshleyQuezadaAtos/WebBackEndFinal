@@ -11,8 +11,8 @@ namespace WebBackEndRepo.Configurations
         public DbSet<Tag> Tags { get; set; }
         public DbSet<Section> Sections { get; set; }
         public DbSet<Topic> Topics { get; set; }
-        public DbSet<TopicFeedback> TopicFeedbacks { get; set; }
-        
+        public DbSet<Language> Languages { get; set; }
+
        
 
         public EntityContext(DbContextOptions options) : base(options)
