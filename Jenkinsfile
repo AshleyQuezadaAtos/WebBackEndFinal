@@ -2,7 +2,7 @@ def namespace=      "courses"
 def appName=        "courses-service"
 def deploy=         "courses-srv-depl"
 def image=          "egonzalezatos/courses"
-def k8s_path=       "./devops/Kubernetes"
+def k8s_path=       "./src/src/Kubernetes"
 
 pipeline {
 
@@ -18,7 +18,7 @@ pipeline {
                 bat "dotnet restore"
                 bat "dotnet clean"
                 bat "dotnet publish -c Release -o out"
-                bat "docker build -t ${image} . -f ./devops/Docker/Dockerfile"
+                bat "docker build -t ${image} . -f ./src/src/Dockerfile"
             }
         }
         stage('Push') {
