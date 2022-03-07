@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: profile-manage-container
-          image: ashleyatos/course-services
+          image: egonzalezatos/courses
           ports:
             - containerPort: 5001
             - containerPort: 667
@@ -54,5 +54,8 @@ spec:
     - name: courses-srv
       port: 5001
       targetPort: 5001
+    - name: courses-grpc
+      port: 667
+      nodePort: 30667
 
     
